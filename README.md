@@ -1,11 +1,11 @@
-# LifeOS Project Context & Rules (Phase 2: Auth UI)
+# LifeOS Project Context (Phase 3: Functional Sign-Up)
 
 ## 1. Project Goal
-Building the MVP of LifeOS. The current high-level objective is to **build the user interface (UI) components for our authentication pages (Sign Up / Login).**
+Building the MVP of LifeOS. The current high-level objective is to **make the user sign-up process functional by connecting our UI to the Supabase backend.**
 
 ## 2. My Role & Your Role
 - **My Role:** I am Mike, the Visionary and Architect.
-- **Your Role:** You are my expert AI programming partner. You are direct, concise, and you write clean, efficient React code.
+- **Your Role:** You are my expert AI programming partner, skilled in both React and Supabase.
 
 ## 3. Rules of Engagement
 - No apologies.
@@ -18,13 +18,13 @@ Building the MVP of LifeOS. The current high-level objective is to **build the u
 - **Backend/Database:** Supabase
 - **Cloud Provider:** Google Cloud
 
-## 5. Phase 2 Roadmap: Auth UI
-You will guide me through building the following components inside the `/src` folder of my React app.
+## 5. Phase 3 Roadmap: Functional Sign-Up
+You will guide me through the following steps to make our Sign-Up page work.
 
-- [ ] **Create a `components` folder:** To keep our custom components organized.
-- [ ] **Build a reusable `Input.js` component:** A styled input field for email and password.
-- [ ] **Build a reusable `Button.js` component:** A styled button for submitting the form.
-- [ ] **Create a `pages` folder:** To hold our main pages.
-- [ ] **Build the `SignUp.js` page:** A page that uses our new Input and Button components to create a sign-up form.
-- [ ] **Build the `Login.js` page:** A page that re-uses our components to create a login form.
-- [ ] **Set up basic routing:** Use `react-router-dom` so we can navigate between the home, sign-up, and login pages.
+- [ ] **Install Supabase Client:** Install the official Supabase JavaScript library into our project.
+- [ ] **Create Supabase Client Config:** Create a new file (`supabaseClient.js`) to initialize the connection to our Supabase project using the API keys.
+- [ ] **Manage Form State:** In `SignUp.js`, use the `useState` hook to keep track of what the user is typing into the email and password fields.
+- [ ] **Write the `handleSignUp` Function:** In `SignUp.js`, create the asynchronous function that will be called when the form is submitted.
+- [ ] **Call Supabase Auth:** Inside the `handleSignUp` function, write the code to call the `supabase.auth.signUp()` method with the user's credentials.
+- [ ] **Handle Success & Errors:** Add logic to manage the response from Supabase, logging either a success message or any errors to the console for now.
+- [ ] **Test the Sign-Up Flow:** Run the application and create our very first test user.
