@@ -1,7 +1,7 @@
-# LifeOS Project Context (Phase 4: Functional Login & Session)
+# LifeOS Project Context (Phase 5: Journaling Feature)
 
 ## 1. Project Goal
-Building the MVP of LifeOS. The current high-level objective is to **make the user login process functional and manage the user's session across the app.**
+Building the MVP of LifeOS. The current high-level objective is to **build the core journaling feature, allowing users to create and view their own private journal entries.**
 
 ## 2. My Role & Your Role
 - **My Role:** I am Mike, the Visionary and Architect. My job is to hold the vision and confirm results.
@@ -19,11 +19,19 @@ Your absolute top priority is to accomplish our goals in the fewest possible hum
 - **Frontend:** React
 - **Backend/Database:** Supabase
 
-## 5. Phase 4 Roadmap: Functional Login & Session Management
-- [ ] Write the `handleLogin` Function in `Login.js`.
-- [ ] Create an `AuthContext` to manage the user's session.
-- [ ] Set up the Supabase `onAuthStateChange` listener.
-- [ ] Wrap the App in the `AuthContext.Provider`.
-- [ ] Create a protected `Dashboard.js` Page.
-- [ ] Implement a `ProtectedRoute.js` component.
-- [ ] Test the full authentication flow (Sign Up -> Log Out -> Log In -> Access Dashboard).
+## 5. Project Progress
+
+### Completed Milestones:
+- **Phase 1: Foundational Setup:** GitHub repository and local project folder created and linked.
+- **Phase 2: Auth UI:** Reusable components and pages for Sign Up & Login have been built.
+- **Phase 3: Functional Sign-Up:** The Sign-Up page is now connected to Supabase and successfully creates new users.
+- **Phase 4: Functional Login & Session Management:** Users can log in, log out, and session is managed via `AuthContext`. A `ProtectedRoute` is functional.
+
+### Phase 5 Roadmap: Core App Feature - Journaling (Create & View)
+- [ ] Create the `journal_entries` table in the Supabase database.
+- [ ] Implement Row Level Security (RLS) so users can only access their own entries.
+- [ ] Create the UI on the `Dashboard.js` page for submitting a new journal entry.
+- [ ] Write the function to insert a new journal entry into the database.
+- [ ] Create the UI on the `Dashboard.js` page to display a list of past journal entries.
+- [ ] Write the function to fetch and display the current user's journal entries.
+- [ ] Test the full journaling flow.
