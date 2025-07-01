@@ -1,1 +1,1 @@
-{"headers": [{"source": "/(.*)","headers": [{"key": "Content-Security-Policy","value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; img-src 'self' data:;"}]}]}
+{"headers": [{"source": "/(.*)","headers": [{"key": "Content-Security-Policy","value": "default-src 'self'; script-src 'self' 'sha256-Dihre3QnGNIeC2ImO2k0jTofMu9Ktzr1R5vj/F2dMJI=' ; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co; img-src 'self' data:;"}]}]}
