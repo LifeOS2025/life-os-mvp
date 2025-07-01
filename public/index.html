@@ -19,30 +19,19 @@
     <div id="extension-conflict-fallback" style="display: none; padding: 30px; text-align: center; font-family: sans-serif;">
       <h1>Application Failed to Start</h1>
       <p>A critical error occurred, likely due to a conflict with a browser extension.</p>
-      <p>Please try the following:</p>
-      <ul style="text-align: left; display: inline-block;">
-        <li>Disable your browser extensions (especially password managers or ad-blockers) for this site.</li>
-        <li>Refresh the page.</li>
-      </ul>
-      <p>We apologize for the inconvenience.</p>
+      <p>Please try disabling browser extensions (especially password managers or ad-blockers) for this site and then refresh the page.</p>
     </div>
 
     <script>
-      window.addEventListener('error', function(event) {
-        // Check if the error is likely from a browser extension
-        if (event.filename && event.filename.includes('extension://')) {
-          // Prevent the error from flooding the console
-          event.preventDefault();
-          
-          // Show our fallback message and hide the React app root
-          var fallback = document.getElementById('extension-conflict-fallback');
-          var appRoot = document.getElementById('root');
-          
-          if (fallback) fallback.style.display = 'block';
-          if (appRoot) appRoot.style.display = 'none';
-        }
-      });
+      /* Dead Man's Switch: If the React app doesn't load and clear this timer in 2 seconds, show the fallback UI. */
+      window.appMountTimer = setTimeout(function() {
+        var fallback = document.getElementById('extension-conflict-fallback');
+        var appRoot = document.getElementById('root');
+        if (fallback) fallback.style.display = 'block';
+        if (appRoot) appRoot.style.display = 'none';
+      }, 2000);
     </script>
+    
     <div id="root"></div>
   </body>
 </html>
