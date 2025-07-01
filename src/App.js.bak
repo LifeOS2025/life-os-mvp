@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-domain';
 import { AuthProvider } from './context/AuthContext';
 
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import Goals from './pages/Goals';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -18,9 +17,9 @@ function App() {
           {/* This is our protected route group. */}
           {/* The ProtectedRoute component will check for a user. */}
           <Route path="/" element={<ProtectedRoute />}>
-            {/* Child routes that are protected */}
+            {/* If the user is logged in, this route will render the Dashboard. */}
+            {/* The 'index' prop makes it the default child route. */}
             <Route index element={<Dashboard />} />
-            <Route path="goals" element={<Goals />} />
           </Route>
 
         </Routes>
