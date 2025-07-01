@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import Goals from './pages/Goals';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -12,13 +13,12 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          {/* This is the route for our login page. It's public. */}
+          {/* Public routes */}
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
 
           {/* This is our protected route group. */}
-          {/* The ProtectedRoute component will check for a user. */}
           <Route path="/" element={<ProtectedRoute />}>
-            {/* Child routes that are protected */}
             <Route index element={<Dashboard />} />
             <Route path="goals" element={<Goals />} />
           </Route>
