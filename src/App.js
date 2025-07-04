@@ -5,6 +5,7 @@ import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
+import MentalOffload from './pages/MentalOffload'; // Assumes this is the component for the 'offload' page
 import Goals from './pages/Goals';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -20,6 +21,8 @@ function App() {
           {/* This is our protected route group. */}
           <Route path="/" element={<ProtectedRoute />}>
             <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} /> {/* <-- FIX */}
+            <Route path="offload" element={<MentalOffload />} /> {/* <-- FIX */}
             <Route path="goals" element={<Goals />} />
           </Route>
 
